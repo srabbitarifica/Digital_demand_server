@@ -10,13 +10,7 @@ import mysql from "mysql2";
 
 const app = express();
 
-const corsOrigin = {
-  origin: "http://localhost:3000",
-  credentials: true,
-  optionSuccessStatus: 200,
-};
-
-app.use(cors(corsOrigin));
+app.use(cors());
 
 dotenv.config();
 
@@ -51,5 +45,5 @@ app.post("/login", loginRoute);
 app.post("/signup", signupRoute);
 
 app.listen(process.env.BACKEND_PORT, () => {
-  console.log(`Server is running on http://localhost:${process.env.BACKEND_PORT}`);
+  console.log(`Server is running on ${process.env.BACKEND_URL}`);
 });
