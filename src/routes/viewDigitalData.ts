@@ -13,8 +13,8 @@ router.get("/data", (req, res) => {
     vl_value: [],
     gt_category: [],
   };
-
-  fs.createReadStream("downloaded_sample_file.csv")
+// update filename here
+  fs.createReadStream("df_kundigung_w_forecast.csv.csv")
     .pipe(csvParser())
     .on("data", (row) => {
       data.id.push(row.id);
