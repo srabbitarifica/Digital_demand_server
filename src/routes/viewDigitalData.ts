@@ -14,7 +14,7 @@ router.get("/data", (req, res) => {
     gt_category: [],
   };
 // update filename here
-  fs.createReadStream("df_kundigung_w_forecast.csv.csv")
+  fs.createReadStream("downloaded_sample_file.csv")
     .pipe(csvParser())
     .on("data", (row) => {
       data.id.push(row.id);
